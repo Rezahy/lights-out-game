@@ -1,8 +1,15 @@
 import { createBoard, flipCellsAround } from "../../lib/utils";
-
+type BoardRow = [boolean, boolean, boolean, boolean, boolean];
+export type Board = [
+	[...BoardRow],
+	[...BoardRow],
+	[...BoardRow],
+	[...BoardRow],
+	[...BoardRow]
+];
 export type LightsOutState = {
 	hasWon: boolean;
-	board: boolean[][];
+	board: Board;
 };
 
 export type LightsOutAction = {

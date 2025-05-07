@@ -1,9 +1,12 @@
-import type { LightsOutState } from "../reducers/lights-out/lights-out-reducer";
+import type {
+	Board,
+	LightsOutState,
+} from "../reducers/lights-out/lights-out-reducer";
 import { CHANCE_LIGHT_STARTS_ON, N_COLS, N_ROWS } from "./constant";
 
 export const flipCellsAround = (
 	coord: `${number}-${number}`,
-	board: boolean[][]
+	board: Board
 ): LightsOutState => {
 	const [y, x] = coord.split("-").map(Number);
 	function flipCell(y: number, x: number) {
@@ -32,5 +35,5 @@ export const createBoard = () => {
 		}
 		board.push(row);
 	}
-	return board;
+	return board as Board;
 };

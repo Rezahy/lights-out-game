@@ -68,7 +68,7 @@ const Board = () => {
 					<table className="Board">
 						<tbody>
 							{lightsOutState.board.map((rows, rowIndex) => (
-								<tr>
+								<tr key={rowIndex}>
 									{rows.map((_cols, colIndex) => {
 										const coord = `${rowIndex}-${colIndex}` as const;
 										return (
